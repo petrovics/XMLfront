@@ -1,0 +1,13 @@
+body {
+    padding: 0 !important;
+    margin: 0 !important; 
+}
+
+.container {
+    width: calc(100% - 300px);
+    margin: 0 auto;
+}
+
+.form {
+    margin: 20px 0;
+}
