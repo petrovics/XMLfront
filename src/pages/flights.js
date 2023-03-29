@@ -27,12 +27,6 @@ const Flights = () => {
         <div>
             <h1 className="headerFlights">FLIGHTS</h1>
         </div>
-
-        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="de">
-        </LocalizationProvider>;
-
-
-        
    <div>
             <table class="styled-table">
                 <tbody>
