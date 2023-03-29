@@ -42,10 +42,19 @@ body {
 
 .button {
     background-color: #009879;
-    margin-left: 710px;
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
 
 }
 
+.button1 {
+    background-color: #009879;
+    display: block;
+    margin: auto;
+    width: fit-content;
+
+}
 .confirmButton {
     background-color: #009879;
     margin-left: 250px;
@@ -53,10 +62,9 @@ body {
 }
 
 .headerFlights {
-    margin-left: 700px;
+    text-align: center;
     font-size: 1.5em;
     font-family: sans-serif;
-    min-width: 400px;
     color:  #009879;;
     
 }
@@ -66,3 +74,23 @@ body {
     border-color: #009879;
     margin-left: 500px;
 }
+
+.labels{
+    font-family: sans-serif;
+    font-weight: bold;
+    color:  #009879;
+    margin-bottom: 1px;
+
+}
+
+.container1{
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    margin-right: 3px;
+
+}
+

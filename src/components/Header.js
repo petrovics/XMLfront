@@ -1,5 +1,7 @@
 import Link from "next/link"
 import styles from '@/styles/Header.module.css'
+import { width } from "@mui/system"
+
 
 const Header = () => {
 
@@ -7,9 +9,15 @@ const Header = () => {
         <div className="left">
 
         </div>
-        <div className="right">
+
+        <div className="center">
+            <Link href={'/flights'}>View Flights</Link>
             <Link href={'/login'}>Login</Link>
             <Link href={'/registration'}>Registration</Link>
+        </div>
+
+        <div className="right">
+
         </div>
        
     </div>

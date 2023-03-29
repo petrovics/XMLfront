@@ -30,14 +30,94 @@ const AddFlight = () => {
         
         <div className="container">
             <div className="form addflight-form">
+
+                <label className="labels" for="FlightID" >FlightID:</label>
+
                 <TextField
+                    id="FlightID"
                     label="Flight ID"
                     variant="outlined"
                     fullWidth
-                    margin="normal"
                     onChange={(e) => handleChange('flightid', e.target.value)}
 
                 />
+
+                <label className="labels" for="departureA">Departure Airport: </label>
+                <div></div>
+                <select 
+                    id="departureA"
+                    label="Please choose an option."
+                    variant="outlined"
+                    fullWidth
+                
+                >
+                    <option value="BEL">Nikola Tesla, BEL</option>
+                </select>
+
+                <div></div>
+
+                <label className="labels" for="destinationA">Destination Airport: </label>
+                <div></div>
+                <select 
+                    id="destinationA"
+                    label="Please choose an option."
+                    variant="outlined"
+                    fullWidth
+                
+                >
+                    <option value="BEL">Nikola Tesla, BEL</option>
+                </select>
+
+                <div></div>
+
+                <label className="labels" for="departure" >Departure Date and Time:</label>
+
+                <TextField 
+                    id="departure"
+                    variant="outlined"
+                    fullWidth
+                    type="datetime-local"
+                />
+
+                <label className="labels" for="arrival" >Arrival Date and Time:</label>
+
+                <TextField 
+                    id="arrival"
+                    variant="outlined"
+                    fullWidth
+                    type="datetime-local"
+                />
+
+                <label className="labels" for="duration">Duration:</label>
+
+                <TextField
+                    id="duration"
+                    label="Duration"
+                    variant="outlined"
+                    fullWidth
+                    onChange={(e) => handleChange('flightid', e.target.value)}
+                />
+
+                <label className="labels" for="ticketPrice">TicketPrice:</label>
+
+                <TextField
+                    id="ticketPrice"
+                    label="Ticket Price"
+                    variant="outlined"
+                    fullWidth
+                    onChange={(e) => handleChange('flightid', e.target.value)}
+                />
+
+                <label className="labels" for="capacity">Capacity:</label>
+
+                <TextField
+                    id="capacity"
+                    label="Capacity"
+                    variant="outlined"
+                    fullWidth
+                    onChange={(e) => handleChange('flightid', e.target.value)}
+                />
+
 
                <Button className="confirmButton" onClick={() => handleSubmit()} variant="contained">Add</Button>
             </div>
