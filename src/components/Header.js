@@ -11,7 +11,10 @@ const Header = () => {
             <Link href={'/login'}>Login</Link>
             <Link href={'/registration'}>Registration</Link>
         </div>
+       
     </div>
+
+
 }
 
 export default Header
