@@ -15,6 +15,13 @@ const Login = () => {
 
     const handleSubmit = () => {
         console.log(data)
+
+        fetch('http://localhost:8082/api/user/registration', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+        .then(data => console.log(data))
     }
 
     return <div id='registration'>

@@ -3,7 +3,6 @@ import { Button, TextField} from "@mui/material"
 import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 import { useState } from "react"
 import { images } from "../../next.config"
-import image from "./images/download.jpg";
 
 
 
@@ -30,91 +29,76 @@ const AddFlight = () => {
         
         <div className="container">
             <div className="form addflight-form">
+                <div className="row">
+                    <label className="labels">Departure Airport: </label>
+                    <select className="select3"
+                        id="departureA"
+                        label="Please choose an option."
+                        variant="outlined"
+                        fullwidth="true"
+                    >
+                        <option value="BEL">Nikola Tesla, BEL</option>
+                    </select>
 
-                <label className="labels" for="FlightID" >FlightID:</label>
+    
+                    <label className="labels" >Departure Date and Time:</label>
 
-                <TextField
-                    id="FlightID"
-                    label="Flight ID"
-                    variant="outlined"
-                    fullWidth
-                    onChange={(e) => handleChange('flightid', e.target.value)}
+                    <TextField className="dateandtime1"
+                        id="departure"
+                        variant="outlined"
+                        type="datetime-local"
+                    />
+                </div>
 
-                />
+                <div className="row">
 
-                <label className="labels" for="departureA">Departure Airport: </label>
-                <div></div>
-                <select 
-                    id="departureA"
-                    label="Please choose an option."
-                    variant="outlined"
-                    fullWidth
-                
-                >
-                    <option value="BEL">Nikola Tesla, BEL</option>
-                </select>
+                    <label className="labels" >Destination Airport: </label>
+                    
+                    <select className="select3"  
+                        id="destinationA"
+                        label="Please choose an option."
+                        variant="outlined"
+                        fullwidth="true"
+                    >
+                        <option value="BEL">Nikola Tesla, BEL</option>
+                    </select>
 
-                <div></div>
+                    <label className="labels" >Arrival Date and Time:</label>
 
-                <label className="labels" for="destinationA">Destination Airport: </label>
-                <div></div>
-                <select 
-                    id="destinationA"
-                    label="Please choose an option."
-                    variant="outlined"
-                    fullWidth
-                
-                >
-                    <option value="BEL">Nikola Tesla, BEL</option>
-                </select>
+                    <TextField className="dateandtime1"
+                        id="arrival"
+                        variant="outlined"
+                        type="datetime-local"
+                    />
+                </div>
 
-                <div></div>
+                <label className="labels" >Duration:</label>
 
-                <label className="labels" for="departure" >Departure Date and Time:</label>
-
-                <TextField 
-                    id="departure"
-                    variant="outlined"
-                    fullWidth
-                    type="datetime-local"
-                />
-
-                <label className="labels" for="arrival" >Arrival Date and Time:</label>
-
-                <TextField 
-                    id="arrival"
-                    variant="outlined"
-                    fullWidth
-                    type="datetime-local"
-                />
-
-                <label className="labels" for="duration">Duration:</label>
-
-                <TextField
+                <TextField className="fields"
                     id="duration"
                     label="Duration"
                     variant="outlined"
-                    fullWidth
+                    fullwidth="true"
                     onChange={(e) => handleChange('flightid', e.target.value)}
                 />
 
-                <label className="labels" for="ticketPrice">TicketPrice:</label>
+                <label className="labels" >TicketPrice:</label>
 
-                <TextField
+                <TextField className="fields"
                     id="ticketPrice"
                     label="Ticket Price"
                     variant="outlined"
-                    fullWidth
+                    fullwidth="true"
                     onChange={(e) => handleChange('flightid', e.target.value)}
                 />
 
-                <label className="labels" for="capacity">Capacity:</label>
+                <label className="labels" >Capacity:</label>
 
-                <TextField
+                <TextField className="fields"
                     id="capacity"
                     label="Capacity"
                     variant="outlined"
-                    fullWidth
+                    fullwidth="true"
                     onChange={(e) => handleChange('flightid', e.target.value)}
                 />
 

@@ -15,6 +15,13 @@ const Login = () => {
 
     const handleSubmit = () => {
         console.log(data)
+
+        fetch('http://localhost:8082/api/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+        .then(data => console.log(data))
     }
 
 
@@ -23,23 +30,30 @@ const Login = () => {
 
         <div className="container">
             <div className="form login-form">
-                <TextField
+
+                <label className="labels" for="Email" >Email:</label>
+
+                <TextField className="loginfields"
+                    id="Email"
                     label="Email"
                     variant="outlined"
                     fullWidth
-                    margin="normal"
                     onChange={(e) => handleChange('email', e.target.value)}
 
                 />
-                <TextField
-                    type='password'
+
+                <label className="labels" for="Password" >Password:</label>
+
+                <TextField className="loginfields"
+                    type="password"
+                    id="Password"
                     label="Password"
                     variant="outlined"
                     fullWidth
-                    margin="normal"
                     onChange={(e) => handleChange('password', e.target.value)}
+
                 />
-                <Button onClick={() => handleSubmit()} variant="contained" margin="normal" fullWidth>Login</Button>
+                <Button className="button" onClick={() => handleSubmit()} variant="contained" margin="normal" >Login</Button>
             </div>
         </div>
 
