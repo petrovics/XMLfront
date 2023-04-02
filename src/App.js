@@ -7,9 +7,10 @@ import Layout from './hoc/Layout/Layout';
 //import Checkout from './containers/Checkout/Checkout';
 //import Orders from './containers/Orders/Orders';
 import Auth from './containers/Auth/Auth';
-
+import Flights from './containers/Flights/Flights';
 import Login from './containers/Auth/Login/Login';
 import Logout from './containers/Auth/Logout/Logout';
+import Tickets from './containers/Tickets/Tickets'
 import * as actions from './store/actions/index';
 
 class App extends Component {
@@ -22,24 +23,24 @@ class App extends Component {
       <Switch>
         <Route path="/auth" component={Auth} />
         <Route path="/login" component={Login} />
-        
+         <Route path="/flights" component= {Flights} /> 
+         <Route path="/" component ={Flights}/>
         {/* <Route path="/flights" component={} */}
         {/* <Route path="/" exact component={BurgerBuilder} /> */}
-        <Redirect to="/" />
+         <Redirect to="/" /> 
       </Switch>
     );
 
-    if ( this.props.isAuthenticated ) {
+   if ( this.props.isAuthenticated ) {
       routes = (
         <Switch>
-          {/* //<Route path="/checkout" component={Checkout} /> */}
-          {/* <Route path="/orders" component={Orders} /> */}
-          <Route path="/logout" component={Logout} />
-          {/* <Route path="/" exact component={BurgerBuilder} /> */}
-          <Redirect to="/" />
+          <Route path="/flights" component={Tickets}/>
+          <Route path="/logout" exact component={Logout}/>
+          <Route path="/" component={Flights}/>
+           <Redirect to="/" /> 
         </Switch>
       );
-    }
+    } 
 
     return (
       <div>

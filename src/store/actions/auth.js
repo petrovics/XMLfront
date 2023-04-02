@@ -46,21 +46,21 @@ export const auth = (email, password, isSignup) => {
         const authData = {
             email: email,
             password: password,
-            returnSecureToken: true
+           
         };
-        let url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/signupNewUser?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+        let url = 'https://localhost:44326/api/Auth/login';
         if (!isSignup) {
-            url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyB5cHT6x62tTe-g27vBDIqWcwQWBSj3uiY';
+            url = 'https://localhost:44326/api/Auth/login';
         }
         axios.post(url, authData)
             .then(response => {
                 console.log(response);
-                const expirationDate = new Date(new Date().getTime() + response.data.expiresIn * 1000);
+                const expirationDate = new Date(new Date().getTime() + 30 * 1000);
                 localStorage.setItem('token', response.data.idToken);
                 localStorage.setItem('expirationDate', expirationDate);
-                localStorage.setItem('userId', response.data.localId);
-                dispatch(authSuccess(response.data.idToken, response.data.localId));
-                dispatch(checkAuthTimeout(response.data.expiresIn));
+                localStorage.setItem('userId', authData.email);
+                dispatch(authSuccess(response.data.idToken, authData.email));
+                dispatch(checkAuthTimeout(30));
             })
             .catch(err => {
                 dispatch(authFail(err.response.data.error));
@@ -96,8 +96,10 @@ export const register= (user)=>{
        return dispatch=>{
         axios.post('https://localhost:44348/api/User/registration', user)
             .then(response => {
+                
                 console.log(response);
                 dispatch(authStart);
+                dispatch(auth(user.email,user.password,true));
             })
             .catch(err => {
                 dispatch(authFail(err));
@@ -105,4 +107,10 @@ export const register= (user)=>{
 
        }
 
-};
+    };
+ export const getAllFlights=()=>{
+
+
+
+    
+ }
