@@ -12,7 +12,7 @@ const AddFlight = () => {
 
 
 
-/*    const [data, setData] = useState({})
+    const [data, setData] = useState({})
 
     const handleChange = (name, value) => {
         setData({
@@ -30,7 +30,7 @@ const AddFlight = () => {
             body: JSON.stringify(data)
         }).then(response => response.json())
         .then(data => console.log(data))
-    }*/
+    }
 
     return <div id='addflight'>
              <Header/>
