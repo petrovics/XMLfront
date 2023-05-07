@@ -6,9 +6,13 @@ import { images } from "../../next.config"
 
 
 
+
 const AddFlight = () => {
 
-    const [data, setData] = useState({})
+
+
+
+/*    const [data, setData] = useState({})
 
     const handleChange = (name, value) => {
         setData({
@@ -19,7 +23,14 @@ const AddFlight = () => {
 
     const handleSubmit = () => {
         console.log(data)
-    }
+
+        fetch('http://localhost:8082/api/user/addflight', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        }).then(response => response.json())
+        .then(data => console.log(data))
+    }*/
 
     return <div id='addflight'>
              <Header/>
@@ -112,4 +123,5 @@ const AddFlight = () => {
 
 }
 
-export default AddFlight
+
+export default AddFlight 
